@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say Hello 
-        run: echo "Hello from my CI Pipeline"
+      - name: checkout repository 
+        uses: actions/checkout@v6
