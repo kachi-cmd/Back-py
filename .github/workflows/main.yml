@@ -30,3 +30,11 @@ jobs:
 
       - name: run linting
         run: ruff check . 
+
+  deploy: 
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: deploy placeholder
+        run: echo "Tests passed — deployment can proceed!" 
