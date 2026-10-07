@@ -27,4 +27,6 @@ jobs:
 
       - name: run tests
         run: pytest
-        
+
+      - name: run linting
+        run: ruff check . 
