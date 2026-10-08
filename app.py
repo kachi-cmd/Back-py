@@ -40,4 +40,4 @@ def add():
 
 if __name__ == "__main__":
     # Local development only. On App Service the app is served by gunicorn.
-    app.run(host="127.0.0.1", port=int(os.environ.get("PORT", "8000")))
+    app.run(host="127.0.0.1", port=int(os.environ.get("PORT", 8000)))
