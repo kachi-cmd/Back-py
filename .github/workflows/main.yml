@@ -35,6 +35,10 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
 
+    permissions: 
+      id-token: write
+      contents: read
+
     steps:
       - name: deploy placeholder
         run: echo "Tests passed — deployment can proceed!" 
