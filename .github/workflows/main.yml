@@ -40,5 +40,10 @@ jobs:
       contents: read
 
     steps:
-      - name: deploy placeholder
-        run: echo "Tests passed — deployment can proceed!" 
+      - name: azure login
+        uses: azure/login@v2
+        with:
+          client-ID: ${{secrets.AZURE_CLIENT_ID }}
+          tenant-ID: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          run: echo "Login worked— deployment can proceed!"
