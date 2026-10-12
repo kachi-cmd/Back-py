@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: checkout repository 
@@ -33,7 +33,7 @@ jobs:
 
   deploy: 
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     permissions: 
       id-token: write
@@ -47,5 +47,8 @@ jobs:
           Tenant-ID: ${{ secrets.AZURE_TENANT_ID }}
           Subscription-ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: deploy dummy
-        run: echo "Login worked— deployment can proceed!"
+      - name: deploy to azure wen service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'Back-py'
+          package: '.'
